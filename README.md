@@ -99,7 +99,7 @@ CREATE TABLE identityapi (
 * If you want change the port/url authorized you can to change it values where there is `https://localhost:5001` in below query 
 ```
 INSERT INTO identityClient (ClientId,ClientDescription,TimeLife,GrantTypes,RequireClientSecret,ClientSecret,AllowAccessInBrowser,Scopes,RedirectUris,PostLogoutRedirectUris,Authority,AllowOfflineAccess,Claims) VALUES('delivery','Delivery Client', 60, ['implicit'], false, 'secret', true, ['delivery'], ['https://localhost:5001/signin-oidc', 'https://localhost:5001/swagger/oauth2-redirect.html' ], ['https://localhost:5001/signout-callback-oidc'],['https://localhost:5001'], true, [{Type: 'role', Value: 'Role'}]  );
-
+```
 
 ```
 INSERT INTO identityapi (Code,Description,Claims) VALUES ('delivery', 'Delivery API', ['role']);
