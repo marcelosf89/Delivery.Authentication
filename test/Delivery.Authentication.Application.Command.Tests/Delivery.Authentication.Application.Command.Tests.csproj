@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\02-Application\Delivery.Authentication.Application.Command\Delivery.Authentication.Application.Command.csproj" />
+    <ProjectReference Include="..\..\src\03-Infrastructure\Delivery.Authentication.Infrastructure.Data\Delivery.Authentication.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\src\04-Domain\Delivery.Authentication.Domain.Model\Delivery.Authentication.Domain.Model.csproj" />
+    <ProjectReference Include="..\..\src\99-Crosscutting\Delivery.Authentication.Crosscutting\Delivery.Authentication.Crosscutting.csproj" />
+  </ItemGroup>
+
+</Project>

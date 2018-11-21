@@ -1,0 +1,64 @@
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+
+# Custom for Visual Studio
+*.cs     			diff=csharp
+*.csproj 			merge=union
+*.sln 				merge=union
+
+# Normalise endings to CRLF
+*.asax              eol=crlf
+*.aspx              eol=crlf
+*.bat               eol=crlf
+*.cmd               eol=crlf
+*.conf              eol=crlf
+*.config            eol=crlf
+*.cs                eol=crlf
+*.cshtml            eol=crlf
+*.csproj    text    eol=crlf
+*.css               eol=crlf
+*.dbproj    text    eol=crlf
+*.filters 	text 	eol=crlf
+*.fsproj    text    eol=crlf
+*.html              eol=crlf
+*.java              eol=crlf
+*.js                eol=crlf
+*.manifest          eol=crlf
+*.md                eol=crlf
+*.msbuild           eol=crlf
+*.ncrunchproject    eol=crlf
+*.ncrunchsolution   eol=crlf
+*.nunit             eol=crlf
+*.nuspec            eol=crlf
+*.proj              eol=crlf
+*.props 	text 	eol=crlf
+*.ps1               eol=crlf
+*.resx              eol=crlf
+*.settings          eol=crlf
+*.sln       text    eol=crlf
+*.sql               eol=crlf
+*.targets           eol=crlf
+*.template          eol=crlf
+*.txt               eol=crlf
+*.vbproj    text    eol=crlf
+*.vcxitems 	text 	eol=crlf
+*.vcxproj	text 	eol=crlf
+*.xaml              eol=crlf
+*.xml               eol=crlf
+*.xsd               eol=crlf
+*.xsl               eol=crlf
+.classpath          eol=crlf
+.gitattributes      eol=crlf
+.project            eol=crlf
+
+# Standard to msysgit
+*.doc  				diff=astextplain
+*.DOC  				diff=astextplain
+*.docx 				diff=astextplain
+*.DOCX 				diff=astextplain
+*.dot  				diff=astextplain
+*.DOT  				diff=astextplain
+*.pdf  				diff=astextplain
+*.PDF  				diff=astextplain
+*.rtf  				diff=astextplain
+*.RTF  				diff=astextplain

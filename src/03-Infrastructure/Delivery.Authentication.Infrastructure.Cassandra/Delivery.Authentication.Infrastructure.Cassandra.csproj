@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CassandraCSharpDriver" Version="3.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\04-Domain\Delivery.Authentication.Domain.Model\Delivery.Authentication.Domain.Model.csproj" />
+    <ProjectReference Include="..\..\99-Crosscutting\Delivery.Authentication.Crosscutting\Delivery.Authentication.Crosscutting.csproj" />
+    <ProjectReference Include="..\Delivery.Authentication.Infrastructure.Data\Delivery.Authentication.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>

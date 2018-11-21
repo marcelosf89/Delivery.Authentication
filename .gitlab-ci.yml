@@ -1,0 +1,55 @@
+stages:
+- build
+- test
+
+.runner_tags: &runner_tags
+ tags:
+    - docker
+    - linux
+
+.tag_unstable_excepts: &tag_unstable_excepts
+  <<: *runner_tags
+  except:
+    - /.*-rc.*/
+    - /.*-preview.*/
+    - /.*-alpha.*/
+    
+#
+# ─── BUILD ──────────────────────────────────────────────────────────────────────
+#
+
+build:
+  <<: *tag_unstable_excepts
+  stage: build
+  script:
+    - docker build --target=build .
+
+#
+# ─── TEST ───────────────────────────────────────────────────────────────────────
+#
+
+test:unit:
+  <<: *tag_unstable_excepts
+  stage: test
+  stage: test
+  script:
+    - docker build --target=test .
+
+test:performance:
+  <<: *tag_unstable_excepts
+  stage: test
+  script:
+    - docker build --target=test-performance -t $IMAGE .
+    - docker container create --name $IMAGE $IMAGE
+    - docker container cp $IMAGE:performance/results ./performance  
+    - docker container rm -f $IMAGE
+  variables:
+    IMAGE: tp-$CI_JOB_ID
+  only:
+    - master
+    - dev
+    - tags
+  artifacts:
+    expire_in: 4 weeks
+    paths:
+      - performance

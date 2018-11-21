@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="2.5.0" />
+  </ItemGroup>
+  
+   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\02-Application\Delivery.Authentication.Application.Command\Delivery.Authentication.Application.Command.csproj" />
+    <ProjectReference Include="..\..\02-Application\Delivery.Authentication.Application.Query\Delivery.Authentication.Application.Query.csproj" />
+    <ProjectReference Include="..\..\03-Infrastructure\Delivery.Authentication.Infrastructure.Cassandra\Delivery.Authentication.Infrastructure.Cassandra.csproj" />
+    <ProjectReference Include="..\..\03-Infrastructure\Delivery.Authentication.Infrastructure.Data\Delivery.Authentication.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\04-Domain\Delivery.Authentication.Domain.Model\Delivery.Authentication.Domain.Model.csproj" />
+    <ProjectReference Include="..\..\99-Crosscutting\Delivery.Authentication.Crosscutting\Delivery.Authentication.Crosscutting.csproj" />
+  </ItemGroup>
+
+</Project>
