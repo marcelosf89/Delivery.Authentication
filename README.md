@@ -95,8 +95,13 @@ CREATE TABLE identityapi (
 ```
 
 4. Insert data
+
+* If you want change the port/url authorized you can to change it values where there is `https://localhost:5001` in below query 
 ```
 INSERT INTO identityClient (ClientId,ClientDescription,TimeLife,GrantTypes,RequireClientSecret,ClientSecret,AllowAccessInBrowser,Scopes,RedirectUris,PostLogoutRedirectUris,Authority,AllowOfflineAccess,Claims) VALUES('delivery','Delivery Client', 60, ['implicit'], false, 'secret', true, ['delivery'], ['https://localhost:5001/signin-oidc', 'https://localhost:5001/swagger/oauth2-redirect.html' ], ['https://localhost:5001/signout-callback-oidc'],['https://localhost:5001'], true, [{Type: 'role', Value: 'Role'}]  );
+
+
+```
 INSERT INTO identityapi (Code,Description,Claims) VALUES ('delivery', 'Delivery API', ['role']);
 INSERT INTO claims (Code, Description, IsObsolete) VALUES ('admin', 'Admin', false);
 INSERT INTO users (id, claims, creation, deletiondate, email, firstname, lastaccess, lastname, password, phone, username) VALUES (e7bb08b0-cdbe-4a59-b437-56c1277f1a58, ['admin'] , '2018-11-20', null , 'admin@admin.com' , 'admin', '2018-11-20', 'admin', 'D033E22AE348AEB5660FC2140AEC35850C4DA997', '0211111111' , 'admin');
@@ -158,5 +163,3 @@ INSERT INTO users (id, claims, creation, deletiondate, email, firstname, lastacc
 |       SetObsoleteNotExists | 2.026 ms |  9.596 ms | 6.347 ms |       0 B |
 | UpdateClaim_ClaimNotExists | 2.483 ms | 11.231 ms | 7.429 ms |       0 B |
 |             UpdateClaim_Ok | 2.654 ms | 12.385 ms | 8.192 ms |       0 B |
-|
-
